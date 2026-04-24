@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>my_prototype — workspace</title>
+<style>
+:root{
+  --purple:#7D62EC; --purple-light:#EDE9FD; --purple-hover:#6A4FD8;
+  --bg:#F7F7F7; --white:#FFFFFF; --border-light:#E8ECF0;
+  --dark:#192435; --mid:#4B5563; --light:#8B96A5;
+  --green:#22C55E; --green-light:#DCFCE7;
+  --r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;padding:48px 24px}
+.wrap{max-width:880px;margin:0 auto}
+.head{margin-bottom:36px}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);padding:4px 10px;border-radius:4px;margin-bottom:14px}
+h1{font-size:32px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px}
+.sub{font-size:15px;color:var(--mid);line-height:1.55;max-width:620px}
+.sub code{background:var(--white);border:1px solid var(--border-light);padding:1px 6px;border-radius:4px;font-size:13px}
+
+.section-title{font-size:12px;font-weight:700;color:var(--light);text-transform:uppercase;letter-spacing:.08em;margin:28px 0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r);padding:22px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px;transition:all .15s;position:relative;overflow:hidden}
+.card:hover{border-color:var(--purple);box-shadow:0 4px 20px rgba(125,98,236,.12);transform:translateY(-2px)}
+.card::after{content:'→';position:absolute;right:20px;top:22px;color:var(--light);font-size:18px;transition:all .15s}
+.card:hover::after{color:var(--purple);transform:translateX(3px)}
+
+.card-slug{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--light);margin-bottom:6px}
+.card-title{font-size:17px;font-weight:700}
+.card-desc{font-size:13px;color:var(--mid);line-height:1.55;margin-top:2px}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.tag{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--purple-light);color:var(--purple)}
+.tag.green{background:var(--green-light);color:#166534}
+
+.empty{background:var(--white);border:1.5px dashed var(--border-light);border-radius:var(--r);padding:40px 22px;text-align:center;color:var(--light);font-size:13px}
+.foot{margin-top:32px;font-size:12px;color:var(--light)}
+.foot a{color:var(--purple);text-decoration:none}
+.foot a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="eyebrow">Prototype workspace</div>
+    <h1>my_prototype</h1>
+    <p class="sub">Локальний репозиторій HTML-прототипів. Кожен прототип живе у своїй теці в <code>prototypes/</code>. Без білд-системи, без фреймворків — просто HTML + CSS + JS.</p>
+  </div>
+
+  <div class="section-title">Prototypes</div>
+  <div class="grid">
+    <a class="card" href="prototypes/sales-agent-v2/index.html">
+      <div class="card-slug">prototypes/sales-agent-v2/</div>
+      <div class="card-title">Sales Agent v2</div>
+      <div class="card-desc">Growth Execution Agent для Snov.io. 8 екранів, концепція L0–L3 context layers, повний флоу від memory до результатів.</div>
+      <div class="card-tags">
+        <span class="tag green">Active</span>
+        <span class="tag">Snov.io</span>
+        <span class="tag">AI Agent</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-title">How to add a new prototype</div>
+  <div class="empty">
+    Скопіюй <code style="background:var(--bg);padding:1px 6px;border-radius:3px">prototypes/sales-agent-v2/</code> у нову теку зі своїм slug<br>
+    і додай картку сюди в <code style="background:var(--bg);padding:1px 6px;border-radius:3px">index.html</code>.
+  </div>
+
+  <div class="foot">
+    Дивись <a href="CLAUDE.md">CLAUDE.md</a> для правил роботи з прототипами ·
+    <a href="README.md">README.md</a> — загальний опис
+  </div>
+</div>
+</body>
+</html>
